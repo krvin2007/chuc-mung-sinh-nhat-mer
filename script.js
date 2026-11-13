@@ -561,12 +561,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const payload = {
       _subject: '🎂 [Sinh Nhật Mer 19T] Điều ước bí mật từ Mer ✨',
-      _template: 'table',
       _captcha: 'false',
-      Nguoi_Gui: 'Nguyễn Gia Nghi (Mer - @mohaymongmer)',
-      Dip_Le: 'Sinh nhật 19 tuổi (30/10/2007 - 30/10/2026)',
-      Dieu_Uoc_Bi_Mat: wishText,
-      Thoi_Gian_Gui: new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })
+      name: 'Nguyễn Gia Nghi (Mer - @mohaymongmer)',
+      message: wishText,
+      dip_le: 'Sinh nhật 19 tuổi (30/10/2007 - 30/10/2026)',
+      thoi_gian: new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })
     };
 
     fetch(endpoint, {
