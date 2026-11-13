@@ -865,7 +865,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial wishes
   const defaultWishes = [
     {
-      name: 'Đại (Tôi nè 🌸)',
+      name: 'Tài (Tôi nè 🌸)',
       date: 'Hôm nay',
       text: 'Chúc mừng sinh nhật 19 tuổi bà Nghi (Mer)! Chúc bà tuổi mới luôn xinh đẹp, bớt suy nghĩ vu vơ, cười thật nhiều và mọi dự định ấp ủ đều thành công rực rỡ nhé. Có gì cần thì cứ ới tôi một tiếng!'
     },
@@ -882,7 +882,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   function loadWishes() {
-    let saved = localStorage.getItem('mer_birthday_wishes_v2');
+    let saved = localStorage.getItem('mer_birthday_wishes_v3');
     let list = saved ? JSON.parse(saved) : defaultWishes;
 
     if (wishesBoard) {
@@ -936,10 +936,10 @@ document.addEventListener('DOMContentLoaded', () => {
         text
       };
 
-      let saved = localStorage.getItem('mer_birthday_wishes_v2');
+      let saved = localStorage.getItem('mer_birthday_wishes_v3');
       let list = saved ? JSON.parse(saved) : [...defaultWishes];
       list.unshift(newWish);
-      localStorage.setItem('mer_birthday_wishes_v2', JSON.stringify(list));
+      localStorage.setItem('mer_birthday_wishes_v3', JSON.stringify(list));
 
       appendWishToDOM(newWish);
       nameInput.value = '';
@@ -959,10 +959,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const catQuotes = [
     'Meo meo! Chúc mừng sinh nhật bà Mer 19 tuổi ạ! 🐾',
     'Bà Nghi xoa đầu làm tui phê quá à~ purr purr... 💖',
-    'Sen Đại dặn tui hôm nay phải ngoan ngoãn phục vụ bà Mer! 🐱',
+    'Sen Tài dặn tui hôm nay phải ngoan ngoãn phục vụ bà Mer! 🐱',
     'Chúc bà Mer tuổi 19 ăn no ngủ say, luôn xinh đẹp và nhiều cá! 🐟',
     'Meo~ Hôm nay bà Mer là công chúa đẹp nhất trần đời! 👑',
-    'Đố bà Mer biết ai thương bà nhiều nhất? (Sen Đại và tụi mèo nè!) ✨',
+    'Đố bà Mer biết ai thương bà nhiều nhất? (Sen Tài và tụi mèo nè!) ✨',
     'Meo meo~ Cho tui xin một miếng bánh kem sinh nhật đi bà Mer! 🎂'
   ];
   let catQuoteIdx = 0;
