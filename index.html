@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 19th Birthday, Nguyễn Gia Nghi (Mer) ✨🎂</title>
+  <meta name="description" content="Trang web chúc mừng sinh nhật 19 tuổi dành riêng cho Nguyễn Gia Nghi (Mer) - Sinh ngày 30/10. Tuổi mới rực rỡ và ngọt ngào!">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Particle & Canvas Animation -->
+  <canvas id="effect-canvas"></canvas>
+
+  <!-- ========================================================
+       1. SURPRISE GIFT OPENING OVERLAY
+       ======================================================== -->
+  <div class="gift-overlay" id="giftOverlay">
+    <div class="gift-badge">✨ Special Birthday Surprise • 30/10 ✨</div>
+    <h1 class="gift-title font-serif">Gửi Đến Nguyễn Gia Nghi (Mer)</h1>
+    <p class="gift-sub">Một món quà sinh nhật tuổi 19 tôi làm riêng dành tặng bà với tất cả sự trân quý và những điều ngọt ngào nhất!</p>
+    
+    <div class="gift-box-container" id="giftBox">
+      <div class="gift-box">
+        <div class="gift-bow"></div>
+        <div class="gift-lid"></div>
+        <!-- Peeking Kitty in Gift Box -->
+        <div class="gift-peeking-cat">
+          <svg viewBox="0 0 100 80" width="85" height="68">
+            <polygon points="20,50 33,18 48,46" fill="#ffffff" stroke="#ffccd5" stroke-width="2"/>
+            <polygon points="25,45 33,25 43,43" fill="#ffb3c1"/>
+            <polygon points="52,46 67,18 80,50" fill="#ffffff" stroke="#ffccd5" stroke-width="2"/>
+            <polygon points="57,43 67,25 75,45" fill="#ffb3c1"/>
+            <ellipse cx="50" cy="55" rx="34" ry="24" fill="#ffffff" stroke="#ffccd5" stroke-width="2"/>
+            <ellipse cx="38" cy="50" rx="3.5" ry="5.5" fill="#333333"/>
+            <circle cx="39.5" cy="48" r="1.5" fill="#ffffff"/>
+            <ellipse cx="62" cy="50" rx="3.5" ry="5.5" fill="#333333"/>
+            <circle cx="63.5" cy="48" r="1.5" fill="#ffffff"/>
+            <polygon points="48,56 52,56 50,59" fill="#ff758c"/>
+            <path d="M46,60 Q50,63 54,60" fill="none" stroke="#666666" stroke-width="1.5"/>
+            <ellipse cx="32" cy="55" rx="4" ry="2" fill="#ffb3c1" opacity="0.8"/>
+            <ellipse cx="68" cy="55" rx="4" ry="2" fill="#ffb3c1" opacity="0.8"/>
+            <ellipse cx="28" cy="72" rx="7" ry="5" fill="#ffffff" stroke="#ffccd5" stroke-width="1.5"/>
+            <ellipse cx="72" cy="72" rx="7" ry="5" fill="#ffffff" stroke="#ffccd5" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="gift-body"></div>
+      </div>
+    </div>
+
+    <!-- Birthday Password Lock -->
+    <div class="pass-lock-container" id="passLockContainer">
+      <form class="pass-lock-form" id="passLockForm">
+        <div class="pass-input-wrapper" id="passInputWrapper">
+          <span class="pass-lock-icon">🔐</span>
+          <input 
+            type="text" 
+            id="passInput" 
+            class="pass-input" 
+            placeholder="Nhập ngày sinh (VD: 3010)" 
+            maxlength="10" 
+            autocomplete="off" 
+            spellcheck="false"
+            required
+            autofocus
+          >
+          <button type="submit" class="pass-submit-btn" id="passSubmitBtn">
+            <span>Mở Khóa ✨</span>
+          </button>
+        </div>
+        <div class="pass-hint">💡 Gợi ý: Ngày sinh nhật của bà Mer (DD/MM)</div>
+        <div class="pass-error" id="passError"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       2. FIXED NAVIGATION BAR
+       ======================================================== -->
+  <nav class="navbar" id="navbar">
+    <a href="#hero" class="nav-brand">
+      <img src="images/mer_avatar.jpg" alt="Mer Avatar" class="avatar-mini">
+      <span class="font-serif">Mer • 19th Birthday</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#hero">Trang Chủ</a></li>
+      <li><a href="#cake">Thổi Nến</a></li>
+      <li><a href="#kitty">Góc Mèo 🐾</a></li>
+      <li><a href="#memories">Kỷ Niệm</a></li>
+      <li><a href="#wishes">19 Điều Ngọt Ngào</a></li>
+      <li><a href="#fortune">Bói Vui</a></li>
+      <li><a href="#guestbook">Sổ Lời Chúc</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="https://www.instagram.com/mohaymongmer/" target="_blank" rel="noopener noreferrer" class="nav-insta-btn" title="Ghé thăm Instagram @mohaymongmer">
+        <span>📸</span>
+        <span>@mohaymongmer</span>
+      </a>
+      <button class="icon-btn" id="themeToggleBtn" title="Chuyển chế độ ngày/đêm">🌙</button>
+    </div>
+  </nav>
+
+  <!-- ========================================================
+       3. HERO SECTION
+       ======================================================== -->
+  <section class="hero-section" id="hero">
+    <div class="hero-container">
+      <!-- Left Content -->
+      <div class="hero-content">
+        <div class="hero-badge-wrap">
+          <span>🎂</span>
+          <span>CHAPTER 19 • 30 . 10</span>
+        </div>
+
+        <h1 class="hero-title font-serif">
+          Happy 19th Birthday,<br>
+          <span class="gradient-text">Nguyễn Gia Nghi</span>
+        </h1>
+
+        <div style="margin-bottom: 14px;">
+          <a href="https://www.instagram.com/mohaymongmer/" target="_blank" rel="noopener noreferrer" class="hero-insta-pill font-script" title="Ghé thăm Instagram @mohaymongmer của Mer nè!">
+            <span>📸 @mohaymongmer</span>
+            <span style="font-size: 0.85rem; font-family: sans-serif;">↗</span>
+          </a>
+        </div>
+
+        <p class="hero-quote">
+          "( 灬 º ‿ º 灬 ) ♡ Mơ hay mộng Mer — La vie est faite de petit bonheur ✨"
+        </p>
+
+        <!-- Stats Milestones -->
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-number">19</div>
+            <div class="stat-label">Tuổi Rực Rỡ Của Bà</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="statDays">6,950+ ngày</div>
+            <div class="stat-label">Bà Mang Niềm Vui Đến Thế Giới</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">30.10</div>
+            <div class="stat-label">Ngày Sinh Nhật Của Bà</div>
+          </div>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#cake" class="btn-primary">
+            <span>🎂 Thổi Nến Chúc Mừng</span>
+          </a>
+          <a href="#wishes" class="btn-secondary">
+            <span>✨ 19 Điều Ngọt Ngào</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Portrait Polaroid -->
+      <div class="hero-portrait-wrapper">
+        <div class="hero-polaroid">
+          <div class="polaroid-tape"></div>
+          <div class="hero-img-wrap">
+            <img src="images/mer_spark.jpg" alt="Nguyễn Gia Nghi" class="hero-img">
+          </div>
+          <h3 class="polaroid-caption">Nguyễn Gia Nghi</h3>
+          <p class="polaroid-sub">✨ She’s definitely got her spark back ✨</p>
+          <button class="floating-heart-btn" id="heroHeartBtn">
+            <span>❤️ 19 Yêu Thương</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       4. INTERACTIVE BIRTHDAY CAKE & WISHES SECTION
+       ======================================================== -->
+  <section class="section" id="cake">
+    <div class="section-header">
+      <span class="section-tag">Make A Wish</span>
+      <h2 class="section-title font-serif">Bánh Sinh Nhật Tuổi 19 Của Mer</h2>
+      <p class="section-desc">Bà hãy nhắm mắt lại, nghĩ về một điều ước thật đẹp cho tuổi 19 và bấm nút thổi nến nhé!</p>
+    </div>
+
+    <div class="cake-stage">
+      <div class="cake-container">
+        <!-- Candles 1 & 9 -->
+        <div class="candles-group">
+          <!-- Candle 1 -->
+          <div class="candle-wrap">
+            <div class="candle-flame"></div>
+            <div class="candle-smoke"></div>
+            <div class="candle-body">1</div>
+          </div>
+          <!-- Candle 9 -->
+          <div class="candle-wrap">
+            <div class="candle-flame"></div>
+            <div class="candle-smoke"></div>
+            <div class="candle-body">9</div>
+          </div>
+        </div>
+
+        <!-- Top Tier -->
+        <div class="cake-top-tier">
+          <div class="cake-strawberries">
+            <span>🍓</span>
+            <span>✨</span>
+            <span>🍓</span>
+            <span>✨</span>
+            <span>🍓</span>
+          </div>
+        </div>
+
+        <!-- Bottom Tier -->
+        <div class="cake-bottom-tier"></div>
+
+        <!-- Plate -->
+        <div class="cake-plate"></div>
+
+        <!-- Cheerleader Kitten Beside Cake -->
+        <div class="cake-cat-cheer" id="cakeCatCheer" title="Bé mèo đang cổ vũ bà Mer thổi nến nè! Bấm để nghe meo meo 🐱">
+          <svg viewBox="0 0 100 100" width="70" height="70">
+            <!-- Party Hat -->
+            <polygon points="43,32 50,6 57,32" fill="#ff477e"/>
+            <circle cx="50" cy="6" r="3.5" fill="#facc15"/>
+            <!-- Ears -->
+            <polygon points="26,46 36,22 46,42" fill="#ffffff" stroke="#ffccd5" stroke-width="2"/>
+            <polygon points="30,42 36,27 42,40" fill="#ffb3c1"/>
+            <polygon points="54,42 64,22 74,46" fill="#ffffff" stroke="#ffccd5" stroke-width="2"/>
+            <polygon points="58,40 64,27 70,42" fill="#ffb3c1"/>
+            <!-- Body -->
+            <ellipse cx="50" cy="72" rx="26" ry="22" fill="#ffffff" stroke="#ffccd5" stroke-width="2"/>
+            <!-- Tail -->
+            <path d="M72,78 Q88,75 84,60" fill="none" stroke="#ffccd5" stroke-width="6" stroke-linecap="round"/>
+            <path d="M72,78 Q88,75 84,60" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+            <!-- Head -->
+            <ellipse cx="50" cy="50" rx="28" ry="22" fill="#ffffff" stroke="#ffccd5" stroke-width="2"/>
+            <!-- Eyes happy curves -->
+            <path d="M36,49 Q40,43 44,49" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+            <path d="M56,49 Q60,43 64,49" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+            <!-- Nose & Mouth -->
+            <polygon points="48,54 52,54 50,57" fill="#ff758c"/>
+            <path d="M46,58 Q50,61 54,58" fill="none" stroke="#666666" stroke-width="1.5"/>
+            <!-- Blush -->
+            <ellipse cx="33" cy="54" rx="4" ry="2" fill="#ffb3c1"/>
+            <ellipse cx="67" cy="54" rx="4" ry="2" fill="#ffb3c1"/>
+            <!-- Clapping Paws -->
+            <ellipse cx="43" cy="68" rx="5" ry="4" fill="#ffffff" stroke="#ffccd5" stroke-width="1.5"/>
+            <ellipse cx="57" cy="68" rx="5" ry="4" fill="#ffffff" stroke="#ffccd5" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </div>
+
+      <p class="cake-instructions">🕯️ Hai ngọn nến tuổi 19 đang lung linh chờ bà thổi nè...</p>
+
+      <!-- Secret Birthday Wish Box (Hộp Nguyện Ước Bí Mật) -->
+      <div class="secret-wish-box" id="secretWishBox">
+        <div class="secret-wish-badge">
+          <span>🌠 Chiếc Hộp Nguyện Ước Tuổi 19 🌠</span>
+        </div>
+        <h3 class="secret-wish-title font-serif">Viết Điều Ước Bí Mật Của Mer</h3>
+        <p class="secret-wish-desc">
+          Bà Nghi ơi, tuổi 19 hãy nhắm mắt lại và gửi gắm những ước muốn chân thành nhất vào đây nhé.<br>
+          Vũ trụ và các vì sao sẽ lắng nghe và giữ bí mật tuyệt đối cho riêng bà... ✨💫
+        </p>
+
+        <form id="secretWishForm" class="secret-wish-form">
+          <div class="secret-wish-input-wrap">
+            <textarea
+              id="secretWishInput"
+              class="secret-wish-textarea"
+              placeholder="Nhập điều ước tuổi 19 của Mer vào đây nè... (Ví dụ: Mong tuổi 19 luôn rạng rỡ, bình an, đạt được mọi ước muốn và hạnh phúc ngập tràn ✨)"
+              maxlength="500"
+              rows="3"
+            ></textarea>
+            <div class="secret-wish-char-count">
+              <span id="secretWishCharCount">0</span>/500 ký tự
+            </div>
+          </div>
+
+          <div class="secret-wish-actions">
+            <button type="submit" class="blow-candles-btn" id="secretWishSubmitBtn">
+              <span>🎂 Thổi Nến & Gửi Điều Ước Lên Vũ Trụ ✨</span>
+            </button>
+            <button type="button" class="blow-silent-link" id="blowSilentLink">
+              Hoặc thổi nến và giữ điều ước bí mật trong lòng 🕯️
+            </button>
+          </div>
+        </form>
+
+        <!-- Secret Wish Success Card -->
+        <div class="secret-wish-success" id="secretWishSuccess" style="display: none;">
+          <div class="secret-wish-sparkle-stars">✨ 🌠 ✨</div>
+          <h4 class="font-serif success-title">🌟 Điều Ước Của Mer Đã Bay Lên Bầu Trời Sao! 🌟</h4>
+          <p class="success-desc">
+            Vũ trụ đã đón nhận trọn vẹn ước muốn tuổi 19 của <strong>bà Mer</strong>.<br>
+            Chúc cho mọi điều bà thầm ước hôm nay đều sẽ trở thành sự thật rạng rỡ nhất! 💖🌸
+          </p>
+          <div class="secret-wish-sealed-pill">
+            <span>🔒 Đã niêm phong & gửi an toàn vào vũ trụ</span>
+          </div>
+          <div>
+            <button type="button" class="send-another-wish-btn" id="sendAnotherWishBtn">
+              <span>✨ Viết thêm một điều ước nữa</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       5. GÓC MÈO CƯNG DÀNH RIÊNG CHO MER (KITTY SANCTUARY)
+       ======================================================== -->
+  <section class="section" id="kitty">
+    <div class="section-header">
+      <span class="section-tag">Meo Meo Therapy</span>
+      <h2 class="section-title font-serif">Góc Mèo Cưng Dành Riêng Cho Mer 🐾</h2>
+      <p class="section-desc">Biết bà Mer rất thích mèo (Kitty Pink cư, Kitty Kissme), tôi đã mời hẳn một bé mèo sinh nhật siêu đáng yêu đến phục vụ bà đây!</p>
+    </div>
+
+    <div class="kitty-sanctuary-box">
+      <div class="kitty-status-pill">
+        <span>🐾</span>
+        <span id="kittyStatusText">Bé mèo đang ngoan ngoãn chờ bà Nghi nựng...</span>
+      </div>
+
+      <div class="kitty-scene">
+        <div class="kitty-main-stage" id="kittyMainStage" title="Chạm vào bé mèo để nghe meo meo & nựng mèo nè!">
+          <svg viewBox="0 0 120 120" class="kitty-main-svg" id="kittyMainSvg">
+            <!-- Tail -->
+            <path d="M88,96 Q112,90 106,70 Q102,60 92,68" class="cat-tail" fill="none" stroke="#ffccd5" stroke-width="9" stroke-linecap="round"/>
+            <path d="M88,96 Q112,90 106,70 Q102,60 92,68" class="cat-tail" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+            <!-- Body -->
+            <ellipse cx="60" cy="85" rx="36" ry="28" fill="#ffffff" stroke="#ffccd5" stroke-width="3"/>
+            <!-- Ears -->
+            <g class="cat-ear-left">
+              <polygon points="30,48 44,18 58,45" fill="#ffffff" stroke="#ffccd5" stroke-width="3"/>
+              <polygon points="35,44 44,24 53,42" fill="#ffb3c1"/>
+            </g>
+            <g class="cat-ear-right">
+              <polygon points="62,45 76,18 90,48" fill="#ffffff" stroke="#ffccd5" stroke-width="3"/>
+              <polygon points="67,42 76,24 85,44" fill="#ffb3c1"/>
+            </g>
+            <!-- Head -->
+            <ellipse cx="60" cy="56" rx="38" ry="30" fill="#ffffff" stroke="#ffccd5" stroke-width="3"/>
+            <!-- Eyes Open -->
+            <g class="cat-eye-open" id="kittyEyesOpen">
+              <ellipse cx="44" cy="53" rx="5" ry="7" fill="#333333"/>
+              <circle cx="46" cy="50" r="2" fill="#ffffff"/>
+              <ellipse cx="76" cy="53" rx="5" ry="7" fill="#333333"/>
+              <circle cx="78" cy="50" r="2" fill="#ffffff"/>
+            </g>
+            <!-- Eyes Closed (Happy) -->
+            <g class="cat-eye-closed" id="kittyEyesClosed" style="display:none;">
+              <path d="M38,53 Q44,46 50,53" fill="none" stroke="#333333" stroke-width="3" stroke-linecap="round"/>
+              <path d="M70,53 Q76,46 82,53" fill="none" stroke="#333333" stroke-width="3" stroke-linecap="round"/>
+            </g>
+            <!-- Whiskers -->
+            <line x1="22" y1="58" x2="36" y2="59" stroke="#cbd5e1" stroke-width="2"/>
+            <line x1="20" y1="64" x2="35" y2="63" stroke="#cbd5e1" stroke-width="2"/>
+            <line x1="84" y1="59" x2="98" y2="58" stroke="#cbd5e1" stroke-width="2"/>
+            <line x1="85" y1="63" x2="100" y2="64" stroke="#cbd5e1" stroke-width="2"/>
+            <!-- Nose & Mouth -->
+            <polygon points="57,60 63,60 60,64" fill="#ff758c"/>
+            <path d="M55,65 Q60,69 65,65" fill="none" stroke="#666666" stroke-width="2" stroke-linecap="round"/>
+            <!-- Rosy Cheeks -->
+            <ellipse cx="36" cy="62" rx="6" ry="3.5" fill="#ffb3c1" opacity="0.8"/>
+            <ellipse cx="84" cy="62" rx="6" ry="3.5" fill="#ffb3c1" opacity="0.8"/>
+            <!-- Paws -->
+            <ellipse cx="48" cy="98" rx="8" ry="6" fill="#ffffff" stroke="#ffccd5" stroke-width="2"/>
+            <ellipse cx="72" cy="98" rx="8" ry="6" fill="#ffffff" stroke="#ffccd5" stroke-width="2"/>
+            <!-- Accessory Slot (Hat / Bow) -->
+            <g id="kittyAccessory">
+              <!-- Default: Pink Bow -->
+              <path d="M50,72 L42,67 L42,77 Z" fill="#ff477e"/>
+              <path d="M70,72 L78,67 L78,77 Z" fill="#ff477e"/>
+              <circle cx="60" cy="72" r="5" fill="#f43f5e"/>
+            </g>
+          </svg>
+        </div>
+        <p id="kittyPurrText" style="font-size: 1.05rem; font-weight: 600; color: var(--primary-rose); min-height: 28px;">"Meo meo! Chúc mừng sinh nhật bà Mer 19 tuổi ạ! 🐱"</p>
+      </div>
+
+      <div class="kitty-controls">
+        <button class="kitty-btn" id="feedFishBtn">
+          <span>🐟 Cho Ăn Cá Hồi</span>
+        </button>
+        <button class="kitty-btn" id="petCatBtn">
+          <span>🐾 Xoa Cằm / Nựng Má</span>
+        </button>
+        <button class="kitty-btn" id="changeHatBtn">
+          <span>🎀 Đổi Phụ Kiện (<span id="hatName">Nơ Hồng</span>)</span>
+        </button>
+      </div>
+
+      <div class="kitty-log" id="kittyLog">
+        Đã nựng bé mèo: <strong id="petCount" style="color: var(--primary-rose); font-size: 1.1rem;">0</strong> lần ❤️
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       5. MEMORIES GALLERY (POLAROID & STORY GRID)
+       ======================================================== -->
+  <section class="section" id="memories">
+    <div class="section-header">
+      <span class="section-tag">Sweet Memories</span>
+      <h2 class="section-title font-serif">Ký Ức & Nàng Thơ Mer</h2>
+      <p class="section-desc">Những khoảnh khắc dịu dàng, đáng yêu và rạng ngời nhất của Gia Nghi</p>
+    </div>
+
+    <!-- Instagram Profile Feature Card -->
+    <a href="https://www.instagram.com/mohaymongmer/" target="_blank" rel="noopener noreferrer" class="insta-profile-card" title="Chạm để mở trang Instagram chính chủ của Mer!">
+      <div class="insta-card-avatar-wrap">
+        <div class="insta-story-ring"></div>
+        <img src="images/mer_avatar.jpg" alt="mohaymongmer" class="insta-card-avatar">
+      </div>
+      <div class="insta-card-info">
+        <div class="insta-card-header">
+          <span class="insta-card-handle">Miss memories (@mohaymongmer)</span>
+          <span class="insta-verified-badge" title="Tài khoản chính chủ của Mer">✨</span>
+        </div>
+        <p class="insta-card-bio">"( 灬 º ‿ º 灬 ) ♡ #tryingonceagain • Sinh nhật 30/10"</p>
+        <div class="insta-card-stats">
+          <span><strong>38</strong> bài viết</span>
+          <span><strong>370</strong> người theo dõi</span>
+          <span><strong>369</strong> đang theo dõi</span>
+        </div>
+      </div>
+      <div class="insta-card-action">
+        <span>Ghé thăm Instagram ↗</span>
+      </div>
+    </a>
+
+    <!-- Filters -->
+    <div class="gallery-filters">
+      <button class="filter-btn active" data-filter="all">Tất Cả (All) 🌸</button>
+      <button class="filter-btn" data-filter="kitty">Mèo & Kitty 🐱</button>
+      <button class="filter-btn" data-filter="muse">Nàng Thơ (Muse) ✨</button>
+      <button class="filter-btn" data-filter="sweet">Ngọt Ngào (Sweet) 🍓</button>
+      <button class="filter-btn" data-filter="vibe">Mộng Mơ (Vibes) 🌙</button>
+    </div>
+
+    <!-- Polaroid Grid -->
+    <div class="gallery-grid">
+      <!-- Item Kitty 1 -->
+      <div class="polaroid-card" data-category="kitty sweet">
+        <div class="tape"></div>
+        <div class="polaroid-img-box">
+          <img src="images/mer_kitty.jpg" alt="Kitty Kissme" loading="lazy">
+        </div>
+        <div class="polaroid-meta">
+          <div class="polaroid-caption-text">Kitty Kissme 🐱💋</div>
+          <button class="polaroid-heart" title="Thả tim">❤️</button>
+        </div>
+      </div>
+
+      <!-- Item 1 -->
+      <div class="polaroid-card" data-category="muse">
+        <div class="tape"></div>
+        <div class="polaroid-img-box">
+          <img src="images/mer_spark.jpg" alt="Mer Spark" loading="lazy">
+        </div>
+        <div class="polaroid-meta">
+          <div class="polaroid-caption-text">She’s definitely got her spark back ✨</div>
+          <button class="polaroid-heart" title="Thả tim">❤️</button>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="polaroid-card" data-category="vibe">
+        <div class="tape"></div>
+        <div class="polaroid-img-box">
+          <img src="images/mer_moon.jpg" alt="Mer Moon" loading="lazy">
+        </div>
+        <div class="polaroid-meta">
+          <div class="polaroid-caption-text">Trăng kia ai vẽ mà tròn / Lòng anh ai trộm mà hoài nhớ thương 🌙</div>
+          <button class="polaroid-heart" title="Thả tim">❤️</button>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="polaroid-card" data-category="kitty sweet">
+        <div class="tape"></div>
+        <div class="polaroid-img-box">
+          <img src="images/mer_pink.jpg" alt="Mer Pink" loading="lazy">
+        </div>
+        <div class="polaroid-meta">
+          <div class="polaroid-caption-text">Kitty Pink cư 🌸🐾</div>
+          <button class="polaroid-heart" title="Thả tim">❤️</button>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="polaroid-card" data-category="muse">
+        <div class="tape"></div>
+        <div class="polaroid-img-box">
+          <img src="images/mer_picnic.jpg" alt="Mer Picnic" loading="lazy">
+        </div>
+        <div class="polaroid-meta">
+          <div class="polaroid-caption-text">Picnic date 🍊🍅</div>
+          <button class="polaroid-heart" title="Thả tim">❤️</button>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="polaroid-card" data-category="muse">
+        <div class="tape"></div>
+        <div class="polaroid-img-box">
+          <img src="images/mer_glimpse.jpg" alt="Mer Glimpse" loading="lazy">
+        </div>
+        <div class="polaroid-meta">
+          <div class="polaroid-caption-text">Catch a glimpse ✨</div>
+          <button class="polaroid-heart" title="Thả tim">❤️</button>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="polaroid-card" data-category="sweet">
+        <div class="tape"></div>
+        <div class="polaroid-img-box">
+          <img src="images/mer_sweet.jpg" alt="Mer Sweet" loading="lazy">
+        </div>
+        <div class="polaroid-meta">
+          <div class="polaroid-caption-text">Sweet 🍓🍬</div>
+          <button class="polaroid-heart" title="Thả tim">❤️</button>
+        </div>
+      </div>
+
+      <!-- Item 7 -->
+      <div class="polaroid-card" data-category="vibe">
+        <div class="tape"></div>
+        <div class="polaroid-img-box">
+          <img src="images/mer_yellow_flowers.jpg" alt="Mer Flowers" loading="lazy">
+        </div>
+        <div class="polaroid-meta">
+          <div class="polaroid-caption-text">Tôi thấy hoa vàng trên cỏ xanh 🌻</div>
+          <button class="polaroid-heart" title="Thả tim">❤️</button>
+        </div>
+      </div>
+
+      <!-- Item 8 -->
+      <div class="polaroid-card" data-category="muse">
+        <div class="tape"></div>
+        <div class="polaroid-img-box">
+          <img src="images/mer_serenite.jpg" alt="Mer Serenite" loading="lazy">
+        </div>
+        <div class="polaroid-meta">
+          <div class="polaroid-caption-text">Sérénité — Thanh bình 🍃</div>
+          <button class="polaroid-heart" title="Thả tim">❤️</button>
+        </div>
+      </div>
+
+      <!-- Item 9 -->
+      <div class="polaroid-card" data-category="sweet">
+        <div class="tape"></div>
+        <div class="polaroid-img-box">
+          <img src="images/mer_missme.jpg" alt="Mer Miss Me" loading="lazy">
+        </div>
+        <div class="polaroid-meta">
+          <div class="polaroid-caption-text">Miss me yet? ˚୨୧⋆</div>
+          <button class="polaroid-heart" title="Thả tim">❤️</button>
+        </div>
+      </div>
+
+      <!-- Item 10 -->
+      <div class="polaroid-card" data-category="vibe">
+        <div class="tape"></div>
+        <div class="polaroid-img-box">
+          <img src="images/mer_sea.jpg" alt="Mer Sea" loading="lazy">
+        </div>
+        <div class="polaroid-meta">
+          <div class="polaroid-caption-text">Getting more vitC 🌊🐚✨</div>
+          <button class="polaroid-heart" title="Thả tim">❤️</button>
+        </div>
+      </div>
+
+      <!-- Item 11 -->
+      <div class="polaroid-card" data-category="vibe">
+        <div class="tape"></div>
+        <div class="polaroid-img-box">
+          <img src="images/mer_bonheur.jpg" alt="Mer Bonheur" loading="lazy">
+        </div>
+        <div class="polaroid-meta">
+          <div class="polaroid-caption-text">La vie est faite de petit bonheur ✨</div>
+          <button class="polaroid-heart" title="Thả tim">❤️</button>
+        </div>
+      </div>
+
+      <!-- Item 12 -->
+      <div class="polaroid-card" data-category="sweet">
+        <div class="tape"></div>
+        <div class="polaroid-img-box">
+          <img src="images/mer_warm.jpg" alt="Mer Warm" loading="lazy">
+        </div>
+        <div class="polaroid-meta">
+          <div class="polaroid-caption-text">Stay warm!! 🎊🎄</div>
+          <button class="polaroid-heart" title="Thả tim">❤️</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose">&times;</button>
+      <img src="" alt="Enlarged" class="lightbox-img" id="lightboxImg">
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       6. 19 SWEET WISHES (INTERACTIVE ENVELOPES / CARDS)
+       ======================================================== -->
+  <section class="section" id="wishes">
+    <div class="section-header">
+      <span class="section-tag">Chapter 19 Wishes</span>
+      <h2 class="section-title font-serif">19 Điều Ngọt Ngào Tôi Dành Tặng Bà</h2>
+      <p class="section-desc">Mỗi lá thư là một điều chúc tốt lành tôi dành riêng cho tuổi 19 của bà Nghi. Chạm vào từng lá thư để mở nhé!</p>
+    </div>
+
+    <!-- Progress tracker -->
+    <div class="wishes-progress-container">
+      <p class="wishes-progress-text" id="wishesProgressText">Đã mở: <strong>0</strong> / 19 điều ngọt ngào ✨</p>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="wishesProgressFill"></div>
+      </div>
+    </div>
+
+    <div class="wishes-grid">
+      <!-- Wish 1 -->
+      <div class="wish-card">
+        <div class="wish-card-inner">
+          <div class="wish-card-front">
+            <div class="wish-num-badge">01</div>
+            <h4 class="wish-front-title">Nụ Cười Tỏa Nắng</h4>
+            <span class="wish-front-hint">Chạm để mở 💌</span>
+          </div>
+          <div class="wish-card-back">
+            <div class="wish-back-icon">☀️</div>
+            <p class="wish-back-text">Tôi chúc nụ cười của bà luôn rạng ngời và ấm áp, xua tan mọi mỏi mệt trong cuộc sống!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wish 2 -->
+      <div class="wish-card">
+        <div class="wish-card-inner">
+          <div class="wish-card-front">
+            <div class="wish-num-badge">02</div>
+            <h4 class="wish-front-title">Nhan Sắc Thăng Hạng</h4>
+            <span class="wish-front-hint">Chạm để mở 💌</span>
+          </div>
+          <div class="wish-card-back">
+            <div class="wish-back-icon">🌸</div>
+            <p class="wish-back-text">Tuổi 19 chúc bà ngày càng xinh xắn, đằm thắm và luôn giữ trọn nét dịu dàng của nàng thơ Mer!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wish 3 -->
+      <div class="wish-card">
+        <div class="wish-card-inner">
+          <div class="wish-card-front">
+            <div class="wish-num-badge">03</div>
+            <h4 class="wish-front-title">Ăn Ngon Ngủ Kỹ</h4>
+            <span class="wish-front-hint">Chạm để mở 💌</span>
+          </div>
+          <div class="wish-card-back">
+            <div class="wish-back-icon">🍰</div>
+            <p class="wish-back-text">Chúc bà ăn bao nhiêu đồ ngon cũng không lo béo, mỗi đêm đều có những giấc mộng ngọt ngào.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wish 4 -->
+      <div class="wish-card">
+        <div class="wish-card-inner">
+          <div class="wish-card-front">
+            <div class="wish-num-badge">04</div>
+            <h4 class="wish-front-title">Deadline Né Xa</h4>
+            <span class="wish-front-hint">Chạm để mở 💌</span>
+          </div>
+          <div class="wish-card-back">
+            <div class="wish-back-icon">🎯</div>
+            <p class="wish-back-text">Mọi bài tập, kỳ thi và deadline đều tự giác né xa bà, làm gì cũng trơn tru xuất sắc!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wish 5 -->
+      <div class="wish-card">
+        <div class="wish-card-inner">
+          <div class="wish-card-front">
+            <div class="wish-num-badge">05</div>
+            <h4 class="wish-front-title">Vi Vu Khắp Nơi</h4>
+            <span class="wish-front-hint">Chạm để mở 💌</span>
+          </div>
+          <div class="wish-card-back">
+            <div class="wish-back-icon">✈️</div>
+            <p class="wish-back-text">Chúc bà đi đến những miền đất bà hằng mơ ước, chụp thật nhiều bức hình lung linh lưu dấu thanh xuân.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wish 6 -->
+      <div class="wish-card">
+        <div class="wish-card-inner">
+          <div class="wish-card-front">
+            <div class="wish-num-badge">06</div>
+            <h4 class="wish-front-title">Tình Bạn Chân Thành</h4>
+            <span class="wish-front-hint">Chạm để mở 💌</span>
+          </div>
+          <div class="wish-card-back">
+            <div class="wish-back-icon">👯‍♀️</div>
+            <p class="wish-back-text">Luôn có tôi và bạn bè bên cạnh sẵn sàng lắng nghe, chia sẻ và đồng hành cùng bà mọi lúc.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wish 7 -->
+      <div class="wish-card">
+        <div class="wish-card-inner">
+          <div class="wish-card-front">
+            <div class="wish-num-badge">07</div>
+            <h4 class="wish-front-title">Ví Luôn Rủng Rỉnh</h4>
+            <span class="wish-front-hint">Chạm để mở 💌</span>
+          </div>
+          <div class="wish-card-back">
+            <div class="wish-back-icon">🛍️</div>
+            <p class="wish-back-text">Chúc ví tiền của bà luôn rủng rỉnh, shopping thả ga không cần lăn tăn nhìn giá nhé!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wish 8 -->
+      <div class="wish-card">
+        <div class="wish-card-inner">
+          <div class="wish-card-front">
+            <div class="wish-num-badge">08</div>
+            <h4 class="wish-front-title">Tự Tin Tỏa Sáng</h4>
+            <span class="wish-front-hint">Chạm để mở 💌</span>
+          </div>
+          <div class="wish-card-back">
+            <div class="wish-back-icon">✨</div>
+            <p class="wish-back-text">Bà hãy luôn tự tin vào bản thân nhé, vì trong mắt tôi bà luôn là một cô gái rất đặc biệt!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wish 9 -->
+      <div class="wish-card">
+        <div class="wish-card-inner">
+          <div class="wish-card-front">
+            <div class="wish-num-badge">09</div>
+            <h4 class="wish-front-title">Được Yêu Chiều</h4>
+            <span class="wish-front-hint">Chạm để mở 💌</span>
+          </div>
+          <div class="wish-card-back">
+            <div class="wish-back-icon">💖</div>
+            <p class="wish-back-text">Chúc bà luôn được nâng niu, yêu chiều và trân trọng như nàng công chúa ngọt ngào.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wish 10 -->
+      <div class="wish-card">
+        <div class="wish-card-inner">
+          <div class="wish-card-front">
+            <div class="wish-num-badge">10</div>
+            <h4 class="wish-front-title">Bình Yên Tâm Hồn</h4>
+            <span class="wish-front-hint">Chạm để mở 💌</span>
+          </div>
+          <div class="wish-card-back">
+            <div class="wish-back-icon">🍃</div>
+            <p class="wish-back-text">Chúc bà giữ trọn cảm giác Sérénité — tâm thái nhẹ nhõm, an nhiên trước mọi ồn ào phố thị.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wish 11 -->
+      <div class="wish-card">
+        <div class="wish-card-inner">
+          <div class="wish-card-front">
+            <div class="wish-num-badge">11</div>
+            <h4 class="wish-front-title">Những Niềm Vui Nhỏ</h4>
+            <span class="wish-front-hint">Chạm để mở 💌</span>
+          </div>
+          <div class="wish-card-back">
+            <div class="wish-back-icon">☕</div>
+            <p class="wish-back-text">Một ly trà thơm, một bản nhạc hay, chúc bà tìm thấy niềm vui trong từng điều nhỏ bé mỗi ngày.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wish 12 -->
+      <div class="wish-card">
+        <div class="wish-card-inner">
+          <div class="wish-card-front">
+            <div class="wish-num-badge">12</div>
+            <h4 class="wish-front-title">Sức Khỏe Dồi Dào</h4>
+            <span class="wish-front-hint">Chạm để mở 💌</span>
+          </div>
+          <div class="wish-card-back">
+            <div class="wish-back-icon">🍓</div>
+            <p class="wish-back-text">Năng lượng tràn trề, làn da luôn mịn màng tươi tắn, không bao giờ phải ốm đau mệt mỏi.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wish 13 -->
+      <div class="wish-card">
+        <div class="wish-card-inner">
+          <div class="wish-card-front">
+            <div class="wish-num-badge">13</div>
+            <h4 class="wish-front-title">Dũng Cảm Đam Mê</h4>
+            <span class="wish-front-hint">Chạm để mở 💌</span>
+          </div>
+          <div class="wish-card-back">
+            <div class="wish-back-icon">🎨</div>
+            <p class="wish-back-text">Tự do làm những điều bà thích, theo đuổi đam mê và tỏa sáng theo cách riêng của bà.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wish 14 -->
+      <div class="wish-card">
+        <div class="wish-card-inner">
+          <div class="wish-card-front">
+            <div class="wish-num-badge">14</div>
+            <h4 class="wish-front-title">May Mắn Gõ Cửa</h4>
+            <span class="wish-front-hint">Chạm để mở 💌</span>
+          </div>
+          <div class="wish-card-back">
+            <div class="wish-back-icon">🍀</div>
+            <p class="wish-back-text">Mỗi ngày trôi qua của bà đều có một bất ngờ dễ thương và những cơ hội tuyệt vời ghé thăm.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wish 15 -->
+      <div class="wish-card">
+        <div class="wish-card-inner">
+          <div class="wish-card-front">
+            <div class="wish-num-badge">15</div>
+            <h4 class="wish-front-title">Trái Tim Ấm Áp</h4>
+            <span class="wish-front-hint">Chạm để mở 💌</span>
+          </div>
+          <div class="wish-card-back">
+            <div class="wish-back-icon">🧸</div>
+            <p class="wish-back-text">Tôi mong bà luôn giữ được sự ngọt ngào, tinh tế và trái tim ấm áp đáng quý như bấy lâu nay.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wish 16 -->
+      <div class="wish-card">
+        <div class="wish-card-inner">
+          <div class="wish-card-front">
+            <div class="wish-num-badge">16</div>
+            <h4 class="wish-front-title">Không Lo Âu Vụn Vặt</h4>
+            <span class="wish-front-hint">Chạm để mở 💌</span>
+          </div>
+          <div class="wish-card-back">
+            <div class="wish-back-icon">🎈</div>
+            <p class="wish-back-text">Mọi chuyện buồn phiền mau chóng trôi đi như bọt bóng, nhường chỗ cho niềm vui bất tận của bà.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wish 17 -->
+      <div class="wish-card">
+        <div class="wish-card-inner">
+          <div class="wish-card-front">
+            <div class="wish-num-badge">17</div>
+            <h4 class="wish-front-title">Kỷ Niệm Đáng Nhớ</h4>
+            <span class="wish-front-hint">Chạm để mở 💌</span>
+          </div>
+          <div class="wish-card-back">
+            <div class="wish-back-icon">📸</div>
+            <p class="wish-back-text">Một năm thứ 19 rực rỡ ghi dấu thật nhiều kỷ niệm đẹp mà sau này nhìn lại bà sẽ mỉm cười tự hào!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wish 18 -->
+      <div class="wish-card">
+        <div class="wish-card-inner">
+          <div class="wish-card-front">
+            <div class="wish-num-badge">18</div>
+            <h4 class="wish-front-title">Chốn Bình Yên</h4>
+            <span class="wish-front-hint">Chạm để mở 💌</span>
+          </div>
+          <div class="wish-card-back">
+            <div class="wish-back-icon">🏡</div>
+            <p class="wish-back-text">Chúc bà luôn có một nơi ấm cúng để trở về và những người yêu thương luôn dang rộng vòng tay đón bà.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wish 19 -->
+      <div class="wish-card">
+        <div class="wish-card-inner">
+          <div class="wish-card-front">
+            <div class="wish-num-badge">19</div>
+            <h4 class="wish-front-title">Ước Nguyện Thành Toàn</h4>
+            <span class="wish-front-hint">Chạm để mở 💌</span>
+          </div>
+          <div class="wish-card-back">
+            <div class="wish-back-icon">🌟</div>
+            <p class="wish-back-text">Tôi tin tất cả những điều ước khi thổi nến sinh nhật tuổi 19 của bà Nghi đều sẽ thành hiện thực!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================
+       8. FORTUNE COOKIE / QUẺ BÓI TUỔI 19
+       ======================================================== -->
+  <section class="section" id="fortune">
+    <div class="section-header">
+      <span class="section-tag">Magic Predictions</span>
+      <h2 class="section-title font-serif">Quẻ Bói Tuổi 19 Của Mer</h2>
+      <p class="section-desc">Chạm vào quả cầu pha lê để xem những điềm lành và vận may đang chờ đón Mer ở tuổi mới!</p>
+    </div>
+
+    <div class="fortune-box">
+      <div class="crystal-ball-wrap" id="crystalBall" title="Chạm vào để bốc quẻ">
+        <span>🔮</span>
+      </div>
+
+      <button class="btn-primary" id="fortuneBtn">
+        <span>✨ Bốc Quẻ May Mắn Tuổi 19</span>
+      </button>
+
+      <!-- Fortune Results Card -->
+      <div class="fortune-result-card" id="fortuneResult">
+        <div class="fortune-item">
+          <span class="fortune-icon">💖</span>
+          <div class="fortune-text">
+            <strong>Tình Duyên & Mối Quan Hệ:</strong>
+            <p id="fortuneLove">Đang bốc quẻ...</p>
+          </div>
+        </div>
+
+        <div class="fortune-item">
+          <span class="fortune-icon">📚</span>
+          <div class="fortune-text">
+            <strong>Học Tập & Dự Định:</strong>
+            <p id="fortuneStudy">Đang bốc quẻ...</p>
+          </div>
+        </div>
+
+        <div class="fortune-item">
+          <span class="fortune-icon">💰</span>
+          <div class="fortune-text">
+            <strong>Tài Chính & May Mắn:</strong>
+            <p id="fortuneWealth">Đang bốc quẻ...</p>
+          </div>
+        </div>
+
+        <div class="fortune-item">
+          <span class="fortune-icon">🌸</span>
+          <div class="fortune-text">
+            <strong>Tâm Trạng & Năng Lượng:</strong>
+            <p id="fortuneMood">Đang bốc quẻ...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       9. GUESTBOOK / SỔ LỜI CHÚC
+       ======================================================== -->
+  <section class="section" id="guestbook">
+    <div class="section-header">
+      <span class="section-tag">Guestbook</span>
+      <h2 class="section-title font-serif">Sổ Lời Chúc Dành Cho Mer</h2>
+      <p class="section-desc">Hãy để lại một lời nhắn ngọt ngào để gửi gắm tình cảm đến Nguyễn Gia Nghi nhé!</p>
+    </div>
+
+    <div class="guestbook-container">
+      <!-- Form Submit -->
+      <div class="guestbook-form-card">
+        <h3 class="font-serif" style="margin-bottom: 20px; color: var(--primary-rose);">Gửi Lời Chúc Mới 💌</h3>
+        <form id="wishForm">
+          <div class="form-group">
+            <label class="form-label" for="senderName">Tên hoặc Biệt danh của bạn:</label>
+            <input type="text" id="senderName" class="form-input" placeholder="Ví dụ: Người thương thầm, Bạn cùng bàn..." required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="senderWish">Lời chúc gửi đến Mer:</label>
+            <textarea id="senderWish" class="form-textarea" placeholder="Viết những lời chúc tốt lành nhất dành cho tuổi 19 của Mer..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+            <span>Gửi Lời Chúc Ngay ✨</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Wishes Board -->
+      <div class="wishes-board" id="wishesBoard">
+        <!-- Notes dynamically populated by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       10. FLOATING MUSIC BAR
+       ======================================================== -->
+  <div class="floating-music-bar" id="musicBar">
+    <audio id="bgmAudio" src="music.mp3" loop preload="auto"></audio>
+    <button class="music-toggle-btn" id="musicToggleBtn" title="Bật/Tắt nhạc sinh nhật">🎵</button>
+    <div class="music-info">
+      <span class="music-title">Sinh Nhật - HIEUTHUHAI 🎂</span>
+      <span class="music-sub">prod. by Wonderlust • For Mer 🎶</span>
+    </div>
+    <div class="equalizer" id="equalizer">
+      <div class="eq-bar"></div>
+      <div class="eq-bar"></div>
+      <div class="eq-bar"></div>
+      <div class="eq-bar"></div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       11. FOOTER
+       ======================================================== -->
+  <footer class="footer">
+    <p class="footer-quote">"Mơ hay mộng Mer — Mừng sinh nhật tuổi 19 rực rỡ!"</p>
+    <p>Created with 💖 by <strong>Đại</strong> for <strong>Nguyễn Gia Nghi (Mer)</strong> • 30/10 • Chapter 19</p>
+    <p style="margin-top: 10px;">
+      <a href="https://www.instagram.com/mohaymongmer/" target="_blank" rel="noopener noreferrer" style="color: var(--primary-rose); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+        <span>📸 Ghé thăm Instagram chính chủ của Mer:</span>
+        <span style="text-decoration: underline;">@mohaymongmer</span>
+        <span>↗</span>
+      </a>
+    </p>
+  </footer>
+
+  <!-- ========================================================
+       12. FLOATING CAT COMPANION MASCOT (BÉ MÈO TRỢ LÝ)
+       ======================================================== -->
+  <div class="cat-mascot-wrapper" id="catMascot">
+    <div class="cat-speech-bubble" id="catBubble" title="Chạm để đổi câu chúc của mèo nè!">
+      Meo meo! Chúc bà Mer 19 tuổi xinh xắn, ngoan ngoãn nha! 🐾
+    </div>
+    <button class="cat-mascot-btn" id="catMascotBtn" title="Bấm để nựng mèo hoặc nghe tiếng meo meo nè 🐱">
+      <svg viewBox="0 0 100 100" class="cat-avatar-svg">
+        <!-- Party Hat -->
+        <polygon points="42,26 50,2 58,26" fill="#ff477e"/>
+        <circle cx="50" cy="2" r="3.5" fill="#facc15"/>
+        <!-- Tail -->
+        <path d="M72,78 Q92,72 86,52" class="cat-tail" fill="none" stroke="#ffccd5" stroke-width="7" stroke-linecap="round"/>
+        <path d="M72,78 Q92,72 86,52" class="cat-tail" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+        <!-- Body -->
+        <ellipse cx="50" cy="74" rx="28" ry="22" fill="#ffffff" stroke="#ffccd5" stroke-width="2.5"/>
+        <!-- Ears -->
+        <g class="cat-ear-left">
+          <polygon points="26,40 38,15 48,36" fill="#ffffff" stroke="#ffccd5" stroke-width="2.5"/>
+          <polygon points="30,36 38,20 44,34" fill="#ffb3c1"/>
+        </g>
+        <g class="cat-ear-right">
+          <polygon points="52,36 62,15 74,40" fill="#ffffff" stroke="#ffccd5" stroke-width="2.5"/>
+          <polygon points="56,34 62,20 70,36" fill="#ffb3c1"/>
+        </g>
+        <!-- Head -->
+        <ellipse cx="50" cy="48" rx="30" ry="24" fill="#ffffff" stroke="#ffccd5" stroke-width="2.5"/>
+        <!-- Eyes Open -->
+        <g class="cat-eye-open">
+          <ellipse cx="38" cy="45" rx="4" ry="6" fill="#333333"/>
+          <circle cx="39.5" cy="43" r="1.5" fill="#ffffff"/>
+          <ellipse cx="62" cy="45" rx="4" ry="6" fill="#333333"/>
+          <circle cx="63.5" cy="43" r="1.5" fill="#ffffff"/>
+        </g>
+        <!-- Eyes Closed -->
+        <g class="cat-eye-closed">
+          <path d="M33,45 Q38,40 43,45" fill="none" stroke="#333333" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M57,45 Q62,40 67,45" fill="none" stroke="#333333" stroke-width="2.5" stroke-linecap="round"/>
+        </g>
+        <!-- Whiskers -->
+        <line x1="20" y1="50" x2="30" y2="51" stroke="#cbd5e1" stroke-width="1.5"/>
+        <line x1="18" y1="55" x2="29" y2="54" stroke="#cbd5e1" stroke-width="1.5"/>
+        <line x1="70" y1="51" x2="80" y2="50" stroke="#cbd5e1" stroke-width="1.5"/>
+        <line x1="71" y1="54" x2="82" y2="55" stroke="#cbd5e1" stroke-width="1.5"/>
+        <!-- Nose & Mouth -->
+        <polygon points="48,52 52,52 50,55" fill="#ff758c"/>
+        <path d="M46,56 Q50,59 54,56" fill="none" stroke="#666666" stroke-width="1.5"/>
+        <!-- Blush -->
+        <ellipse cx="32" cy="53" rx="4.5" ry="2.5" fill="#ffb3c1"/>
+        <ellipse cx="68" cy="53" rx="4.5" ry="2.5" fill="#ffb3c1"/>
+        <!-- Paws -->
+        <ellipse cx="42" cy="84" rx="6" ry="4.5" fill="#ffffff" stroke="#ffccd5" stroke-width="1.5"/>
+        <ellipse cx="58" cy="84" rx="6" ry="4.5" fill="#ffffff" stroke="#ffccd5" stroke-width="1.5"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Running Cats Layer (Các Bé Mèo Chạy Xung Quanh Màn Hình) -->
+  <div class="running-cat-container" id="runningCatContainer"></div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
+
